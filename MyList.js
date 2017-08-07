@@ -5,7 +5,8 @@ import {
   StyleSheet,
   Text,
   View,
-  FlatList
+  FlatList,
+  TouchableOpacity
 } from 'react-native';
 import { Button } from 'react-native-elements'
 
@@ -30,11 +31,16 @@ export default class MyList extends Component {
   ];
   _keyExtractor = (item, index) => index;
   renderItem({ item }) {
-    return (<View style={styles.itemStyle}>
+    return (<TouchableOpacity
+            style={styles.itemStyle}
+         //   onPress={() => this.props.navigation.navigate('ListItem')}
+            >
       <Text style={styles.item}>{item.key}</Text>
-    </View>)
+    </TouchableOpacity>)
   }
   render() {
+    console.log(this.props)
+    //  const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <FlatList

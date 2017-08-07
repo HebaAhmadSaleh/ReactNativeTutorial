@@ -40,6 +40,7 @@ export default class ReactNativeElements extends Component {
                     uncheckedIcon='add'
                     checkedColor='red'
                     checked={this.state.checked}
+                    onPress={()=>this.setState({checked:!this.state.checked})}
                 />
 
             </View>
